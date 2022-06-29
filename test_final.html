@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test_final</title>
+</head>
+<body>
+<canvas id="canvas" width="1000px" height="500px" style="border: solid 1px black"></canvas>
+<script>
+
+    //bai 1
+    // let score = [6,7,9,8,9,8]
+    // function findAvg(avg){
+    //     let sum = 0;
+    //     for (let i = 0; i < score.length; i++) {
+    //         sum += score[i];
+    //     }
+    //     avg = (sum/score.length);
+    //     return avg;
+    // }
+    // console.log(findAvg())
+
+    //bai2
+    // function insertNumberToArray(arr,num,index) {
+    //     if(index<0|| index>arr.length){
+    //         return arr;
+    //     }else {
+    //         arr.splice(index,0,num)
+    //         return arr
+    //     }
+    // }
+
+    //bai3
+    // function checkPrimes(n) {
+    //     if (n < 2) return false;
+    //     if (n < 4) return true;
+    //     if (n >= 4) {
+    //         for (let i = 2; i <= Math.sqrt(n); i++) {
+    //             if (n%i == 0) return false;
+    //         }
+    //         return true;
+    //     }
+    // }
+    // function sumOfListPrime(x) {
+    //     let sum =0
+    //     for (let i =2;i<=x;i++) {
+    //         if (checkPrimes(i)) {
+    //             sum += i
+    //         }
+    //     }
+    //     return sum;
+    // }
+    // sumOfListPrime(10)
+    // console.log(sumOfListPrime(10))
+
+
+
+    //bai4
+
+        let canvas = document.getElementById("canvas").getContext("2d")
+
+    canvas.beginPath()
+    canvas.fillStyle = "#b28f19"
+    canvas.arc(10, 10, 100, 0, Math.PI*2)
+    canvas.fill()
+    // canvas.stroke()
+
+
+    class Rectangle{
+        x
+        y
+        width
+        height
+        color
+        constructor(x,y,width,height,color) {
+            this.x = x
+            this.y = y
+            this.width = width
+            this.height = height
+            this.color = color
+        }
+        render(x,y,width,height,color){
+            canvas.beginPath()
+            canvas.fillStyle= color
+            canvas.fillRect(x,y,width,height)
+            canvas.stroke()
+            canvas.closePath()
+        }
+    }
+
+    let hcn = new Rectangle()
+    hcn.render(100,100,150,100, "blue")
+
+</script>
+</body>
+</html>
